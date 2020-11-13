@@ -5,12 +5,19 @@ package com.learn.sammidev;
  Sammi Aldhi Yanto
 */
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -151,8 +158,7 @@ public class Main {
         }
     }
 
-    @Contract(pure = true)
-    private @NotNull static String loveAnnotation(@NotNull Object param) {
+    private static String loveAnnotation(Object param) {
         String value = param.toString();
         return "this can never return null";
     }
@@ -225,6 +231,8 @@ public class Main {
             System.out.println("FILE ENGGAK ADA");
         } catch (IOException e) {
             System.out.println("GAGAL LOAD DATA DARI FILE");
+        }finally {
+            System.out.println("OK");
         }
 
 
